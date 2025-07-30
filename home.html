@@ -1,0 +1,123 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <title>Homepage</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/chessboardjs@1.0.0/www/css/chessboard.css" />
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+    
+    <div id="particles-js"></div>
+    <div class="content">
+    <header class="navbar">
+    <h1>MyWebsite</h1>
+    <nav class="nav-links">
+      <a href="#welcome">Home</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="welcome" class="welcome">
+    <div class="welcome-text">
+      <h2>Welcome to Our Website</h2>
+      <p>Scroll down to learn more or get in touch!</p>
+    </div>
+  </section>
+
+  <section id="chess" class="chess-section">
+    <h2>2-Player Chess Game</h2>
+    <p id="status">White to move</p>
+    <div id="board" style="width: 400px; margin: auto;"></div>
+    <button id="resetBtn">Reset Game</button>
+
+    
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+</div>
+
+
+<script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": {
+        "value": 80,
+        "density": {
+          "enable": true,
+          "value_area": 800
+        }
+      },
+      "color": {
+        "value": "#ffd700"
+      },
+      "shape": {
+        "type": "star"
+      },
+      "opacity": {
+        "value": 0.5
+      },
+      "size": {
+        "value": 2
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#ffd700",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 4,
+        "direction": "none",
+        "out_mode": "bounce"
+      }
+    },
+    "interactivity": {
+      "detect_on": "window",
+      "events": {
+        "onhover": {
+          "enable": true,
+          "mode": "repulse"
+        },
+        "onclick": {
+          "enable": true,
+          "mode": "push"
+        }
+      },
+      "modes": {
+        "repulse": {
+          "distance": 100,
+          "duration": 0.4
+        },
+        "push": {
+          "particles_nb": 4
+        }
+      }
+    },
+    "retina_detect": true
+  });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.13.4/chess.min.js"></script>
+  <script src="https://unpkg.com/chessboardjs@1.0.0/www/js/chessboard.js"></script>
+  <script src="chessboard.js"></script>
+
+
+</body>
+
+</html>
