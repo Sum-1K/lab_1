@@ -54,7 +54,7 @@ code {
   display: block;
   white-space: pre;
 }
-
+/* 
 @media (max-width: 768px) {
   .blog-section {
     padding: 1.2rem;
@@ -68,7 +68,7 @@ code {
   pre {
     font-size: 0.85rem;
   }
-}
+} */
 
 #particles-js {
   position: fixed;
