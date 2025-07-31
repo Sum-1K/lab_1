@@ -87,6 +87,18 @@ code {
 }
 
 
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container .logo {
+  width: 40px; /* adjust size as needed */
+  height: 40px;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
 .navbar {
   position: fixed;
   top: 0;
