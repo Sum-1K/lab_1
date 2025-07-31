@@ -9,10 +9,12 @@ body {
   font-family: Arial, sans-serif;
 }
 
+
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
+  margin-bottom: 80px;
   background-color: white;
   color: #333;
   padding: 1rem 2rem;
@@ -21,6 +23,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .navbar h1 {
@@ -116,34 +119,105 @@ body {
   z-index: 1;
 }
 
-.chess-section {
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container .logo {
+  width: 40px; /* adjust size as needed */
+  height: 40px;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.contests {
   padding: 4rem 2rem;
-  background-color: #e0e0e0;
+  background-color: #f1f1f1;
   text-align: center;
 }
 
-.chess-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.contests h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
 }
 
-.chess-section #status {
-  margin-bottom: 1rem;
-  font-weight: bold;
-  font-size: 1.2rem;
+.contest-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
 
-.chess-section button {
+.contest-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  height: 170px;
+  width: 400px;
+  text-align: left;
+  align-content: center;
+}
+
+.contest-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.contest-card .btn {
+  
+  align-self: center;
+  display: inline-block;
+  text-align: center;
+  width: 350px;
   margin-top: 1rem;
-  padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
+  padding: 0.5rem 1rem;
   background-color: #333;
   color: white;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
-.chess-section button:hover {
+.contest-card .btn_live {
+  align-self: center;
+  text-align: center;
+  width: 350px;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: green;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+
+.contest-card .btn_reg {
+  align-self: center;
+  text-align: center;
+  width: 350px;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: blue;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.contest-card .btn_live:hover {
+  background-color: darkgreen;
+}
+
+.contest-card .btn_reg:hover {
+  background-color: purple;
+}
+
+.contest-card .btn:hover {
   background-color: #555;
+}
+
+.live {
+  color: green;
+  font-weight: bold;
 }

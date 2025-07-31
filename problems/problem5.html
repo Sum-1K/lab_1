@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Number Spiral - CodeQuest</title>
+  <link rel="stylesheet" href="../problems.css">
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+  <div class="content">
+    
+  <div id="particles-js"></div>
+  <header class="navbar">
+    <div class="logo-container">
+      <img src="../logo3.jpeg" alt="Logo" class="logo" />
+      <h1>CodeQuest</h1>
+    </div>
+    <nav class="nav-links">
+      <a href="../home.html">Home</a>
+      <a href="../problems.html">Problems</a>
+      <a href="../profile.html">My Profile</a>
+    </nav>
+  </header>
+
+  <section class="problems-section">
+    <div class="problem-header">
+  <h2>Number Spiral</h2>
+  <span class="problem-rating">Rating: 1600</span>
+</div>
+    <p>In a number spiral, numbers are arranged in a square spiral pattern. Given a position (y, x), find the number at that cell.</p>
+
+    <h3>Input</h3>
+    <p>The first line contains an integer t (number of queries). Each of the next t lines contains two integers y and x.</p>
+
+    <h3>Output</h3>
+    <p>For each query, print the value at coordinate (y, x) in the number spiral.</p>
+  </section>
+    <section class="editor-section">
+    <h3>Write Your Code</h3>
+    
+    <label for="language">Choose Language:</label>
+    <select id="language" onchange="loadTemplateCode()">
+      <option value="cpp">C++</option>
+      <option value="python">Python</option>
+    </select>
+
+    <textarea id="codeArea" rows="15" cols="80"></textarea>
+
+    <br><br>
+    <button type="button" class="submit-btn">Submit</button>
+  </section>
+
+  <section class="hints-section">
+  <details class="hint-box">
+    <summary>💡 Hint 1</summary>
+    <p>Try drawing a few small spirals (e.g., 3×3, 4×4) and observe the number pattern.</p>
+  </details>
+
+  <details class="hint-box">
+    <summary>💡 Hint 2</summary>
+    <p>The value at (y, x) lies on the boundary of a square layer. Use max(y, x) to determine the layer and direction of filling.</p>
+  </details>
+</section>
+</div>
+
+  <script>
+    function loadTemplateCode() {
+      const lang = document.getElementById("language").value;
+      const codeBox = document.getElementById("codeArea");
+
+      if (lang === "cpp") {
+        codeBox.value = `#include <iostream>
+using namespace std;
+
+int main() {
+    // Your code here
+    return 0;
+}`;
+      } else if (lang === "python") {
+        codeBox.value = `def main():
+    # Your code here
+    pass
+
+if __name__ == "__main__":
+    main()`;
+      }
+    }
+
+    // Load default code on page load
+    window.onload = loadTemplateCode;
+  </script>
+
+  <script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": {
+        "value": 80,
+        "density": {
+          "enable": true,
+          "value_area": 800
+        }
+      },
+      "color": {
+        "value": "#ffd700"
+      },
+      "shape": {
+        "type": "star"
+      },
+      "opacity": {
+        "value": 0.5
+      },
+      "size": {
+        "value": 2
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#ffd700",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 4,
+        "direction": "none",
+        "out_mode": "bounce"
+      }
+    },
+    "interactivity": {
+      "detect_on": "window",
+      "events": {
+        "onhover": {
+          "enable": true,
+          "mode": "repulse"
+        },
+        "onclick": {
+          "enable": true,
+          "mode": "push"
+        }
+      },
+      "modes": {
+        "repulse": {
+          "distance": 100,
+          "duration": 0.4
+        },
+        "push": {
+          "particles_nb": 4
+        }
+      }
+    },
+    "retina_detect": true
+  });
+</script>
+
+</body>
+</html>

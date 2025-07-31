@@ -1,0 +1,99 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #16073a;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.profile-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+}
+
+.profile-card {
+  background: rgba(255,255,255,0.95);
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.username {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+  color: #333;
+}
+
+.email {
+  color: #777;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.bio {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.stats {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.stats div {
+  margin: 5px 0;
+}
+
+.badges {
+  margin-bottom: 1rem;
+}
+
+.badge {
+  display: inline-block;
+  background-color: gold;
+  color: black;
+  padding: 0.4rem 0.7rem;
+  margin: 0.2rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.profile-actions button {
+  margin: 0.5rem;
+  padding: 0.7rem 1.4rem;
+  border: none;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.profile-actions button:hover {
+  background-color: #555;
+}

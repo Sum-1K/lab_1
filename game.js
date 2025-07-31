@@ -1,6 +1,6 @@
 var game = new Chess();
 
-function onDrop(source, target) {
+function onDrop(source, target) { 
   // see if the move is legal
   var move = game.move({
     from: source,

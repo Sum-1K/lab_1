@@ -10,34 +10,65 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body> 
   
     
     <div id="particles-js"></div>
     <div class="content">
     <header class="navbar">
-    <h1>MyWebsite</h1>
+      <div class="logo-container">
+      <img src="logo3.jpeg" alt="Logo" class="logo" />
+      <h1>CodeQuest</h1>
+    </div>
     <nav class="nav-links">
-      <a href="#welcome">Home</a>
-      <a href="#contact">Contact</a>
+      <a href="problems.html">Solve Problems</a>
+      <a href="blog.html">Blog</a>
+      <a href='profile.html'>My Profile</a>
     </nav>
   </header>
 
   <section id="welcome" class="welcome">
     <div class="welcome-text">
-      <h2>Welcome to Our Website</h2>
+      <h2>Welcome to CodeQuest</h2>
       <p>Scroll down to learn more or get in touch!</p>
     </div>
   </section>
-
+<!-- 
   <section id="chess" class="chess-section">
     <h2>2-Player Chess Game</h2>
     <p id="status">White to move</p>
     <div id="board" style="width: 400px; margin: auto;"></div>
-    <button id="resetBtn">Reset Game</button>
-
-    
+    <button id="resetBtn">Reset Game</button> -->
   </section>
+
+    <section id="contests" class="contests">
+    <h2>Recent Contests</h2>
+    <div class="contest-list">
+
+      <div class="contest-card">
+        <h3>CodeRush July 2025</h3>
+        <p><strong>Date:</strong> July 28, 2025</p>
+        <p><strong>Status:</strong> <span class="live">Live Now</span></p>
+        <a href="contest/coderush-july.html" class="btn_live">Join Now</a>
+      </div>
+
+      <div class="contest-card">
+        <h3>CoderConquest Round 998</h3>
+        <p><strong>Date:</strong> July 15, 2025</p>
+        <p><strong>Status:</strong> Ended</p>
+        <a href="contest/bugsmash-blitz.html" class="btn">View Results</a>
+      </div>
+
+      <div class="contest-card">
+        <h3>CoderConquest Round 999</h3>
+        <p><strong>Date:</strong> August 3, 2025</p>
+        <p><strong>Status:</strong> Upcoming</p>
+        <a href="contest/frontend-fever.html" class="btn_reg">Register</a>
+      </div>
+
+    </div>
+  </section>
+
 
   <section id="contact" class="contact">
     <h2>Contact Us</h2>
@@ -112,10 +143,11 @@
     "retina_detect": true
   });
 </script>
+<!-- 
+<script src="https://unpkg.com/chess.js@0.10.3/chess.min.js"></script>
+<script src="https://unpkg.com/chessboardjs@1.0.0/www/js/chessboard.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.13.4/chess.min.js"></script>
-  <script src="https://unpkg.com/chessboardjs@1.0.0/www/js/chessboard.js"></script>
-  <script src="chessboard.js"></script>
+<script src="game.js"></script> -->
 
 
 </body>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeQuest Blog</title>
+  
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+  <div id="particles-js"></div>
+  <div class="content">
+<header class="navbar">
+  <h1>CodeQuest</h1>
+  <nav class="nav-links">
+    <a href="../home.html">Home</a>
+    <a href="../problems.html">Problems</a>
+    <a href="../profile.html">My Profile</a>
+  </nav>
+</header>
+<section class="blog-section"><h2>Weird Algorithm</h2><p class="author">Author: coder01</p><div class="meta-info"><span class="tag">Category: General</span><span class="tag">Level: Easy</span></div><p><strong>🔍 Problem Summary:</strong><br/>Given a number n, perform the following until n = 1:<br/>If n is even: n = n / 2<br/>If n is odd: n = 3 * n + 1</p><p><strong>💡 Key Insight:</strong><br/>This is a direct simulation problem. Just follow the rules and keep printing the sequence.</p><p><strong>✅ C++ Code:</strong></p><p><strong>🧠 Takeaway:</strong><br/>Use <code>long long</code> to prevent overflow. Great intro to loops &amp; conditionals.</p><h4>💻 Code:</h4><pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    long long n;
+    cin &gt;&gt; n;
+    while (n != 1) {
+        cout &lt;&lt; n &lt;&lt; " ";
+        if (n % 2 == 0)
+            n /= 2;
+        else
+            n = n * 3 + 1;
+    }
+    cout &lt;&lt; 1;
+    return 0;
+}</code></pre><div class="summary">⏱ Time: — • 🧠 Space: — • ✅ Good for: Practice and understanding</div></section>
+<section class="blog-section"><h2>Missing Number</h2><p class="author">Author: coder02</p><div class="meta-info"><span class="tag">Category: General</span><span class="tag">Level: Easy</span></div><p><strong>🔍 Problem Summary:</strong><br/>Given numbers from 1 to n, one number is missing. Find it.</p><p><strong>💡 Trick:</strong><br/>The sum of first n numbers is n(n+1)/2. Subtract actual sum from it.</p><p><strong>✅ Python Code:</strong></p><p><strong>🧠 Takeaway:</strong><br/>Use math to simplify the problem. Constant time and space!</p><h4>💻 Code:</h4><pre><code>n = int(input())
+numbers = list(map(int, input().split()))
+expected_sum = n * (n + 1) // 2
+actual_sum = sum(numbers)
+print(expected_sum - actual_sum)</code></pre><div class="summary">⏱ Time: — • 🧠 Space: — • ✅ Good for: Practice and understanding</div></section>
+<section class="blog-section"><h2>Repetitions</h2><p class="author">Author: coder03</p><div class="meta-info"><span class="tag">Category: General</span><span class="tag">Level: Easy</span></div><p><strong>🔍 Problem Summary:</strong><br/>Given a string of A, C, G, T — find the length of longest substring of repeated characters.</p><p><strong>💡 Idea:</strong><br/>Go character by character and track longest repetition.</p><p><strong>✅ C++ Code:</strong></p><p><strong>🧠 Takeaway:</strong><br/>Great intro to string processing &amp; counters.</p><h4>💻 Code:</h4><pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    string s;
+    cin &gt;&gt; s;
+    int maxLen = 1, current = 1;
+    for (int i = 1; i &lt; s.size(); i++) {
+        if (s[i] == s[i-1]) current++;
+        else current = 1;
+        maxLen = max(maxLen, current);
+    }
+    cout &lt;&lt; maxLen;
+    return 0;
+}</code></pre><div class="summary">⏱ Time: — • 🧠 Space: — • ✅ Good for: Practice and understanding</div></section>
+<section class="blog-section"><h2>Increasing Array</h2><p class="author">Author: coder04</p><div class="meta-info"><span class="tag">Category: General</span><span class="tag">Level: Easy</span></div><p><strong>🔍 Problem Summary:</strong><br/>Given an array, make it non-decreasing by only increasing values. Count the moves.</p><p><strong>💡 Idea:</strong><br/>Go left to right and ensure every element is at least the one before.</p><p><strong>✅ Python Code:</strong></p><p><strong>🧠 Takeaway:</strong><br/>Greedy logic: fix problems as you go.</p><h4>💻 Code:</h4><pre><code>n = int(input())
+a = list(map(int, input().split()))
+moves = 0
+for i in range(1, n):
+    if a[i] &lt; a[i-1]:
+        moves += a[i-1] - a[i]
+        a[i] = a[i-1]
+print(moves)</code></pre><div class="summary">⏱ Time: — • 🧠 Space: — • ✅ Good for: Practice and understanding</div></section>
+<section class="blog-section"><h2>Number Spiral</h2><p class="author">Author: coder05</p><div class="meta-info"><span class="tag">Category: General</span><span class="tag">Level: Easy</span></div><p><strong>🔍 Problem Summary:</strong><br/>Given coordinates (y, x), find the value at that cell in a spiral number matrix.</p><p><strong>💡 Insight:</strong><br/>Spiral layer depends on max(y, x). Use observations to build pattern.</p><p><strong>✅ C++ Code:</strong></p><p><strong>🧠 Takeaway:</strong><br/>Observation-based logic. Strengthens pattern recognition.</p><h4>💻 Code:</h4><pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    long long t;
+    cin &gt;&gt; t;
+    while (t--) {
+        long long y, x;
+        cin &gt;&gt; y &gt;&gt; x;
+        long long z = max(y, x);
+        long long val = (z - 1) * (z - 1);
+        if (z % 2 == 0) {
+            if (x == z)
+                val += y;
+            else
+                val += 2 * z - x;
+        } else {
+            if (y == z)
+                val += x;
+            else
+                val += 2 * z - y;
+        }
+        cout &lt;&lt; val &lt;&lt; endl;
+    }
+    return 0;
+}</code></pre><div class="summary">⏱ Time: — • 🧠 Space: — • ✅ Good for: Practice and understanding</div></section>
+<section class="blog-section"><h2>Binary Search</h2><p class="author">Author: coder06</p><div class="meta-info"><span class="tag">Category: General</span><span class="tag">Level: Easy</span></div><p><strong>🔍 Problem Summary:</strong><br/>
+    Given a sorted array and a target value, determine whether the target exists in the array using binary search.
+  </p><p><strong>💡 Key Insight:</strong><br/>
+    Eliminate half the search space each time by comparing the middle element to the target.
+  </p><p><strong>✅ C++ Code:</strong></p><p><strong>🧠 Takeaway:</strong><br/>
+    Binary search runs in <code>O(log n)</code> time — great for large sorted arrays.
+  </p><h4>💻 Code:</h4><pre><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+bool binarySearch(const vector&lt;int&gt;&amp; arr, int target) {
+    int left = 0, right = arr.size() - 1;
+    while (left &lt;= right) {
+        int mid = left + (right - left) / 2;
+        if (arr[mid] == target)
+            return true;
+        else if (arr[mid] &lt; target)
+            left = mid + 1;
+        else
+            right = mid - 1;
+    }
+    return false;
+}
+
+int main() {
+    vector&lt;int&gt; nums = {1, 3, 5, 7, 9, 11};
+    int target;
+    cin &gt;&gt; target;
+    cout &lt;&lt; (binarySearch(nums, target) ? "Found" : "Not Found");
+    return 0;
+}</code></pre><div class="summary">⏱ Time: — • 🧠 Space: — • ✅ Good for: Practice and understanding</div></section>
+<section class="blog-section"><h2>Merge Sort</h2><p class="author">Author: coder07</p><div class="meta-info"><span class="tag">Category: General</span><span class="tag">Level: Easy</span></div><p><strong>🔍 Problem Summary:</strong><br/>
+    Sort an array using the merge sort technique, which follows the divide-and-conquer paradigm.
+  </p><p><strong>💡 Key Insight:</strong><br/>
+    Recursively split the array into halves, sort each half, then merge them in sorted order.
+  </p><p><strong>✅ C++ Code:</strong></p><p><strong>🧠 Takeaway:</strong><br/>
+    Time complexity is <code>O(n log n)</code>. Stable and efficient for large datasets.
+  </p><h4>💻 Code:</h4><pre><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+void merge(vector&lt;int&gt;&amp; arr, int l, int m, int r) {
+    vector&lt;int&gt; left(arr.begin() + l, arr.begin() + m + 1);
+    vector&lt;int&gt; right(arr.begin() + m + 1, arr.begin() + r + 1);
+    int i = 0, j = 0, k = l;
+    while (i &lt; left.size() &amp;&amp; j &lt; right.size())
+        arr[k++] = (left[i] &lt;= right[j]) ? left[i++] : right[j++];
+    while (i &lt; left.size()) arr[k++] = left[i++];
+    while (j &lt; right.size()) arr[k++] = right[j++];
+}
+
+void mergeSort(vector&lt;int&gt;&amp; arr, int l, int r) {
+    if (l &lt; r) {
+        int m = l + (r - l) / 2;
+        mergeSort(arr, l, m);
+        mergeSort(arr, m + 1, r);
+        merge(arr, l, m, r);
+    }
+}
+
+int main() {
+    vector&lt;int&gt; arr = {5, 2, 9, 1, 6};
+    mergeSort(arr, 0, arr.size() - 1);
+    for (int x : arr) cout &lt;&lt; x &lt;&lt; " ";
+    return 0;
+}</code></pre><div class="summary">⏱ Time: — • 🧠 Space: — • ✅ Good for: Practice and understanding</div></section>
+<section class="blog-section"><h2>Dijkstra’s Algorithm</h2><p class="author">Author: coder08</p><div class="meta-info"><span class="tag">Category: General</span><span class="tag">Level: Easy</span></div><p><strong>🔍 Problem Summary:</strong><br/>
+    Find the shortest path from a source node to all other nodes in a weighted graph.
+  </p><p><strong>💡 Key Insight:</strong><br/>
+    Use a priority queue to always extend the shortest discovered path.
+  </p><p><strong>✅ C++ Code:</strong></p><p><strong>🧠 Takeaway:</strong><br/>
+    Efficient for sparse graphs. Time complexity: <code>O((V + E) log V)</code>.
+  </p><h4>💻 Code:</h4><pre><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;queue&gt;
+using namespace std;
+
+const int INF = 1e9;
+
+void dijkstra(int src, vector&lt;vector&lt;pair&lt;int,int&gt;&gt;&gt;&amp; adj, vector&lt;int&gt;&amp; dist) {
+    dist[src] = 0;
+    priority_queue&lt;pair&lt;int,int&gt;, vector&lt;pair&lt;int,int&gt;&gt;, greater&lt;&gt;&gt; pq;
+    pq.push({0, src});
+    
+    while (!pq.empty()) {
+        int d = pq.top().first, u = pq.top().second;
+        pq.pop();
+        if (d &gt; dist[u]) continue;
+
+        for (auto [v, w] : adj[u]) {
+            if (dist[u] + w &lt; dist[v]) {
+                dist[v] = dist[u] + w;
+                pq.push({dist[v], v});
+            }
+        }
+    }
+}
+
+int main() {
+    int n = 5;
+    vector&lt;vector&lt;pair&lt;int,int&gt;&gt;&gt; adj(n);
+    adj[0] = {{1, 2}, {2, 4}};
+    adj[1] = {{2, 1}, {3, 7}};
+    adj[2] = {{4, 3}};
+    adj[3] = {{4, 1}};
+    vector&lt;int&gt; dist(n, INF);
+
+    dijkstra(0, adj, dist);
+
+    for (int d : dist) cout &lt;&lt; d &lt;&lt; " ";
+    return 0;
+}</code></pre><div class="summary">⏱ Time: — • 🧠 Space: — • ✅ Good for: Practice and understanding</div></section>
+<section class="blog-section"><h2>Kadane’s Algorithm</h2><p class="author">Author: coder09</p><div class="meta-info"><span class="tag">Category: General</span><span class="tag">Level: Easy</span></div><p><strong>🔍 Problem Summary:</strong><br/>
+    Given an array of integers, find the contiguous subarray with the maximum sum.
+  </p><p><strong>💡 Key Insight:</strong><br/>
+    Use dynamic programming to keep track of the maximum sum ending at the current index.
+  </p><p><strong>✅ C++ Code:</strong></p><p><strong>🧠 Takeaway:</strong><br/>
+    A linear-time solution to a classic DP problem. Efficient and elegant.
+  </p><h4>💻 Code:</h4><pre><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+int kadane(const vector&lt;int&gt;&amp; arr) {
+    int max_current = arr[0], max_global = arr[0];
+    for (int i = 1; i &lt; arr.size(); i++) {
+        max_current = max(arr[i], max_current + arr[i]);
+        max_global = max(max_global, max_current);
+    }
+    return max_global;
+}
+
+int main() {
+    vector&lt;int&gt; arr = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+    cout &lt;&lt; "Max subarray sum: " &lt;&lt; kadane(arr);
+    return 0;
+}</code></pre><div class="summary">⏱ Time: — • 🧠 Space: — • ✅ Good for: Practice and understanding</div></section>
+</div>
+
+
+
+<script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": {
+        "value": 80,
+        "density": {
+          "enable": true,
+          "value_area": 800
+        }
+      },
+      "color": {
+        "value": "#ffd700"
+      },
+      "shape": {
+        "type": "star"
+      },
+      "opacity": {
+        "value": 0.5
+      },
+      "size": {
+        "value": 2
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#ffd700",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 4,
+        "direction": "none",
+        "out_mode": "bounce"
+      }
+    },
+    "interactivity": {
+      "detect_on": "window",
+      "events": {
+        "onhover": {
+          "enable": true,
+          "mode": "repulse"
+        },
+        "onclick": {
+          "enable": true,
+          "mode": "push"
+        }
+      },
+      "modes": {
+        "repulse": {
+          "distance": 100,
+          "duration": 0.4
+        },
+        "push": {
+          "particles_nb": 4
+        }
+      }
+    },
+    "retina_detect": true
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coding Profile</title>
+  <link rel="stylesheet" href="profile.css" />
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+
+  <div id="particles-js"></div>
+
+  <div class="profile-container">
+    <div class="profile-card">
+      <img src="MrPing.jpg" class="profile-pic" alt="Profile Pic" />
+      <h2 class="username">CodeMaster123</h2>
+      <p class="email">codemaster@example.com</p>
+      <p class="bio">Loves solving algorithmic problems. Aspiring full-stack dev 💻</p>
+
+      <div class="stats">
+        <div><strong>Problems Solved:</strong> 154</div>
+        <div><strong>Languages:</strong> Python, JavaScript, C++</div>
+        <div><strong>Rank:</strong> #421 globally</div>
+      </div>
+
+      <div class="badges">
+        <span class="badge">Python Pro</span>
+        <span class="badge">100 Days Coder</span>
+        <span class="badge">Bug Squasher</span>
+      </div>
+
+      <div class="profile-actions">
+        <button>Edit Profile</button>
+        <button>Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 70, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffd700" },
+        shape: { type: "star" },
+        opacity: { value: 0.5 },
+        size: { value: 2 },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#ffd700",
+          opacity: 0.4,
+          width: 1
+        },
+        move: { enable: true, speed: 3, out_mode: "bounce" }
+      },
+      interactivity: {
+        detect_on: "window",
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" }
+        },
+        modes: {
+          repulse: { distance: 100, duration: 0.4 },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+
+</body>
+</html>
