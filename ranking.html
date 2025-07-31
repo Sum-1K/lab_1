@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Ratings | CodeQuest</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <style>
+    .ratings-section {
+      padding: 4rem 2rem;
+      min-height: 100vh;
+    }
+
+    .ratings-section h2 {
+        color: white;
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .ratings-table {
+      width: 90%;
+      margin: auto;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .ratings-table th,
+    .ratings-table td {
+      padding: 1rem;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    .ratings-table th {
+      background-color: #333;
+      color: white;
+    }
+
+    .ratings-table tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .flag-icon {
+      margin-right: 6px;
+    }
+
+    .username {
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .username img {
+      height: 16px;
+      margin-right: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <div class="content">
+    <header class="navbar">
+      <h1>CodeGuide</h1>
+      <nav class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="#contact">Contact</a>
+        <a href="profile.html">My Profile</a>
+      </nav>
+    </header>
+
+    <section class="ratings-section">
+      <h2>User Rankings (Last 6 Months)</h2>
+      <table class="ratings-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>User</th>
+            <th>Contests</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td class="username"><img src="https://flagcdn.com/w40/by.png" class="flag-icon">tourist</td><td>284</td><td>3820</td></tr>
+          <tr><td>2</td><td class="username"><img src="https://flagcdn.com/w40/cn.png" class="flag-icon">jiangly</td><td>181</td><td>3756</td></tr>
+          <tr><td>3</td><td class="username"><img src="https://flagcdn.com/w40/cn.png" class="flag-icon">Kevin114514</td><td>91</td><td>3705</td></tr>
+          <tr><td>4</td><td class="username"><img src="https://flagcdn.com/w40/cn.png" class="flag-icon">orzdrlewinwang</td><td>73</td><td>3696</td></tr>
+          <tr><td>5</td><td class="username"><img src="https://flagcdn.com/w40/pl.png" class="flag-icon">Radewoosh</td><td>254</td><td>3631</td></tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 }},
+        "color": { "value": "#ffd700" },
+        "shape": { "type": "star" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 2 },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffd700",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 4,
+          "direction": "none",
+          "out_mode": "bounce"
+        }
+      },
+      "interactivity": {
+        "detect_on": "window",
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" }
+        },
+        "modes": {
+          "repulse": { "distance": 100, "duration": 0.4 },
+          "push": { "particles_nb": 4 }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>
